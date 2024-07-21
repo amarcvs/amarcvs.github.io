@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+/*** initialization ***/
+* {
+    /* reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+:root {
+    /* color palette */
+    --mainColor:        #c4c1c1;
+    --secondMainColor:  #b1aeae;
+    --letteringColor:   #373434;
+    --detailsColor:     #34495E;
+    --footerColor:      #918d8d;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--letteringColor);
+}
+
+::-moz-selection {
+    background: var(--detailsColor);
+    color: var(--mainColor);    
+}
+
+::selection {
+    background: var(--detailsColor);
+    color: var(--mainColor);
+}
+
+body {
+    background: var(--mainColor);
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: underline;
+    color: var(--detailsColor);
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    color: var(--letteringColor);
+    text-align: justify;
+}
+
+section {
+    padding: 100px 23.810vw 100px 23.810vw;
+    font-size: 1.2rem;
+}
+
+/*** body fade in and out effect ***/
+.fade_out {
+    opacity: 0;
+}
+
+.fade_transition {
+    transition-property: opacity; 
+    transition-duration: .3s; /* 2s */
+}
+
+/*** cursor ***/
+.cursor {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+    z-index: 6; /* 10000 */
+}
+
+.innercursor {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--detailsColor);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) ;
+    transform-origin: 100% 100% ;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 5; /* 9999 */
+}
+
+.cursor-change {
+    transform: scale(2);
+    background: black;
+}
+
+.innercursor-change {
+    width: 1rem;
+    height: 1rem;
+    background: var(--letteringColor);
+    border: 2px solid var(--letteringColor);
+    opacity: 0.7;
+    transition-property: background, transform;
+    z-index: 7; /* 10002 */
+}
+
+/*** header with logo and menu ***/
+header {
+    position: fixed;
+    width: 100%;
+    padding: 40px 18vw;
+    z-index: 4; /* 1000 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    font-size: 1.2rem;
+}
+
+header.sticky {
+    background: var(--mainColor);
+    padding: 20px 18vw;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    color: var(--letteringColor);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+header .logo:hover {
+    color: var(--detailsColor);
+    border-color: var(--detailsColor);
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+    
+}
+
+header ul li a {
+    margin: 0 0 0 30px;
+    text-decoration: none !important;
+}
+
+header ul li a:hover {
+    color: var(--letteringColor);
+}
+
+header.sticky ul li a {
+    color: var(--letteringColor);
+}
+
+header.sticky ul li a:hover {
+    color: var(--detailsColor);
+}
+
+
+/*** heading and content div ***/
+.heading {
+    margin-bottom: 30px;
+    color: var(--letteringColor);
+}
+
+.heading h2 {
+    font-size: 50px;
+}
+
+.content {
+    display: flex;
+}
+
+.content-spacing {
+    /* simulates ~3 <br/> */
+    margin-bottom: 72px;
+}
+
+/*** custom unordered list ***/
+.check-list {
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+  
+.check-list li {
+    color: var(--letteringColor);
+    position: relative;
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+  
+.check-list li:before {
+    content: 'o';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 0 0 0;
+    transform-origin: bottom left;
+}
+
+/*** copyright section ***/
+.copyright {
+    background: var(--footerColor);
+    padding: 10px;
+}
+
+.copyright p {
+    text-align: center;
+}
+
+.copyright p a {
+    color: var(--letteringColor);
+}
+
+/*** social icons ***/
+.socialaccount {
+    margin-left: 45px;
+}
+
+.socialaccount li {
+    list-style: none;
+}
+
+.socialaccount li a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--letteringColor);
+    margin: 0 0 10px;
+}
+
+.socialaccount li a:hover {
+    background: var(--detailsColor);
+}
+
+.socialaccount li a img {
+    max-width: 24px;
+}
+
+.socialaccount li a img:hover {
+    filter: invert(1);
+}
+
+/*** prompt effect ***/
+.prompt {
+    color: var(--detailsColor);
+    font-weight: 900;
+    cursor: none;
+}
+
+.blink {
+    animation: blinker 1s step-start infinite
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/*** main pages header and secondary sections ***/
+h2.bigheader {
+    font-size: 8vw;
+    text-align: left;
+    text-decoration: initial;
+}
+
+section#intro {
+    background: var(--mainColor);
+    padding-top: 200px;
+}
+
+section#studies,
+section#contacts {
+    background: var(--secondMainColor);
+}
+
+section#siteinfo {
+    background: var(--mainColor);
+}
+
+/*.work .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}*/
