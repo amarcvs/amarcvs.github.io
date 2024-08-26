@@ -1,9 +1,24 @@
 /*** responsiveness ***/
-/* extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) { /**/ }
+/* extra large devices (large laptops and desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) { /**/ }
 
-/* large devices (laptops/desktops, from 992px to 1999px) */
-@media only screen and (max-width: 1999px) { /**/ }
+/* large devices (laptops/desktops/tablets, from 992px to 1200px) */
+@media only screen and (max-width: 1200px) {
+    *, .prompt {
+        cursor: initial;
+        pointer-events: initial;
+    }
+
+    a, a img, .toggle  {
+        cursor: pointer;
+    }
+
+    .cursor,
+    .innercursor {
+        visibility: hidden;
+        display: none;
+    }
+}
 
 /* medium devices (landscape tablets, from 768px to 991px) */
 @media only screen and (max-width: 991px) {
@@ -55,12 +70,6 @@
         background-repeat: no-repeat;
         background-size: 25px;
         transition: 0.5s;
-    }
-
-    .cursor,
-    .innercursor {
-        visibility: hidden;
-        display: none;
     }
 
     header,

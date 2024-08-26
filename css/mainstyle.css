@@ -12,6 +12,11 @@
     cursor: none;
 }
 
+body {
+    /*** for body fade in and out effect ***/
+    opacity: 0;
+}
+
 :root {
     /* color palette */
     --mainColor:        #c4c1c1;
@@ -61,16 +66,6 @@ p {
 section {
     padding: 100px 23.810vw 100px 23.810vw;
     font-size: 1.2rem;
-}
-
-/*** body fade in and out effect ***/
-.fade_out {
-    opacity: 0;
-}
-
-.fade_transition {
-    transition-property: opacity; 
-    transition-duration: .3s; /* 2s */
 }
 
 /*** cursor ***/

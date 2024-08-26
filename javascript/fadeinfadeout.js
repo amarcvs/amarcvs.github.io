@@ -1,27 +1,21 @@
 // fade in/fade out animation
-let body = document.body;
-
-const fade = () => {
-    setTimeout(() => {
-        body.classList.toggle('fade_out');
-    }, 0); /* 1000 */
-}
-
-$(document).ready(function() {
-    // body.addEventListener('load', fade());
-    $('body').bind('load', fade());
+$(window).on('unload', function() {
+    $("body").css('opacity', '1');
 });
 
 $(document).ready(function() {
-    $("a").click(function(event){
-        event.preventDefault();
+    $("body").animate({ opacity: 1 }, 300);
+});
 
+$(document).ready(function() {
+    $("a").click(function(event) {
+        event.preventDefault();
         linkLocation = this.href;
         if(this.target) {
             window.open(linkLocation, '_blank').focus();
         }
         else {
-            $('body').addClass('fade_out').delay(700).queue(function(){
+            $("body").animate({ opacity: 0 }, 400, function() {
                 window.location.href = linkLocation;
             });
         }
