@@ -5,11 +5,8 @@ $(document).ready(function() {
 
 window.addEventListener('scroll', function () {
     if(this.window.innerWidth > 600) {
-        let header = document.querySelector('header');
-        
-        header.classList.toggle('sticky', window.scrollY > 0);
-        header.style.zIndex = "2"; /* 998 */
-
+        let menu = document.querySelector('.menu-div')
+        menu.classList.toggle('fancy-menu', window.scrollY > 200);
     }
 });
 

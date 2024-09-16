@@ -10,6 +10,7 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
     cursor: none;
+    overflow-x: initial;
 }
 
 body {
@@ -68,7 +69,7 @@ section {
     font-size: 1.2rem;
 }
 
-/*** cursor ***/
+/*** cursor effect ***/
 .cursor {
     width: 2rem;
     height: 2rem;
@@ -81,20 +82,22 @@ section {
     transition: all 0.3s ease;
     transition-property: background, transform;
     transform-origin: 100% 100%;
-    z-index: 6; /* 10000 */
+    z-index: 6;
 }
 
 .innercursor {
-    width: 1rem;
-    height: 1rem;
+    display: none;
+    width: .3rem;
+    height: .3rem;
     border: 2px solid var(--detailsColor);
+    background: var(--detailsColor);
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%) ;
     transform-origin: 100% 100% ;
     pointer-events: none;
     transition: all 0.2s ease;
-    z-index: 5; /* 9999 */
+    z-index: 5;
 }
 
 .cursor-change {
@@ -103,21 +106,22 @@ section {
 }
 
 .innercursor-change {
+    display: block;
     width: 1rem;
     height: 1rem;
     background: var(--letteringColor);
     border: 2px solid var(--letteringColor);
     opacity: 0.7;
     transition-property: background, transform;
-    z-index: 7; /* 10002 */
+    z-index: 7;
 }
 
-/*** header with logo and menu ***/
+/*** header with menu ***/
 header {
     position: fixed;
     width: 100%;
-    padding: 40px 18vw;
-    z-index: 4; /* 1000 */
+    padding: 130px 80px 0px 0px;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,11 +131,11 @@ header {
 
 header.sticky {
     background: var(--mainColor);
-    padding: 20px 18vw;
+    padding: 20px 10vw;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
+header .selected-item {
     color: var(--letteringColor);
     font-size: 24px;
     font-weight: 700;
@@ -139,22 +143,21 @@ header .logo {
     text-decoration: none;
 }
 
-header .logo:hover {
+header .selected-item:hover {
     color: var(--detailsColor);
     border-color: var(--detailsColor);
 }
 
-header ul {
-    display: flex;
+.menu-div {
+    text-align: right;
+    transition: 0.5s;
 }
 
 header ul li {
-    list-style: none;
-    
+    margin: 7px 0 7px 0;
 }
 
 header ul li a {
-    margin: 0 0 0 30px;
     text-decoration: none !important;
 }
 
@@ -169,7 +172,6 @@ header.sticky ul li a {
 header.sticky ul li a:hover {
     color: var(--detailsColor);
 }
-
 
 /*** heading and content div ***/
 .heading {
@@ -186,7 +188,7 @@ header.sticky ul li a:hover {
 }
 
 .content-spacing {
-    /* simulates ~3 <br/> */
+    /* simulates ~3 '<br/>' */
     margin-bottom: 72px;
 }
 
@@ -262,12 +264,6 @@ header.sticky ul li a:hover {
 }
 
 /*** prompt effect ***/
-.prompt {
-    color: var(--detailsColor);
-    font-weight: 900;
-    cursor: none;
-}
-
 .blink {
     animation: blinker 1s step-start infinite
 }
@@ -287,7 +283,7 @@ h2.bigheader {
 
 section#intro {
     background: var(--mainColor);
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 section#studies,
