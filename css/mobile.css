@@ -51,6 +51,10 @@
         margin: 10px;
     }
 
+    .vaporwave-mode img {
+        max-width: 70px;
+    }
+
     header ul li a.selected-item {
         font-size: 50px;
         margin: 10px;
@@ -62,8 +66,9 @@
         background: url("../src/openmenu.png");
         background-position: center;
         background-repeat: no-repeat;
+        filter: var(--mobile-menu);
         background-size: 30px;
-        transition: 0.5s;
+        transition: 1.5s;
         z-index: 2;
     }
    
@@ -72,12 +77,17 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: 25px;
-        transition: 0.5s;
+        -o-transform:rotate(720deg);
+        -ms-transform:rotate(720deg);
+        -moz-transform:rotate(720deg);
+        -webkit-transform:rotate(720deg);
+        transform:rotate(720deg);
+        transition: 1.5s;
     }
 
     header,
     header.sticky {
-        background: var(--mainColor);
+        background: var(--secondMainColor);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         padding: 30px 0px 30px 60px;
     }
@@ -97,6 +107,9 @@
         padding-top: 200px;
     }
 
+    .vaporwave-mode img:hover {
+        filter: var(--switchModeImage);
+    }
 
     .socialaccount li a:hover {
         background: initial;

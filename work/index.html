@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="default">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +19,14 @@
                 <li><a href="/" onclick="toggleMenu();">Home</a></li>
                 <li><a href="/about/" onclick="toggleMenu();">About</a></li>
                 <li><a href="/work/" class="selected-item" onclick="toggleMenu();">Work</a></li>
+                <li class="vaporwave-mode"><button onclick="toggleMode();"><img src="../src/vaporwave-mode.png" title="Vaporwave mode"></button></li>
             </ul>
         </div>
     </header>
 
     <section id="intro">
         <div class="heading">
-            <h2 class="bigheader work">Work</h2>
+            <h2 class="bigheader">Work</h2>
         </div>
         <div class="content">
             <div class="content-spacing">
@@ -53,6 +54,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src = "../javascript/fadeinfadeout.js" ></script>
     <script type="text/javascript" src = "../javascript/menu.js" ></script>
+    <script type="text/javascript" src = "../javascript/switchtheme.js" ></script>
     <script type="text/javascript" src = "../javascript/cursor.js" ></script>
 </body>
 </html>

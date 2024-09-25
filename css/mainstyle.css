@@ -18,13 +18,49 @@ body {
     opacity: 0;
 }
 
+/*
+    https://codepen.io/sosuke/pen/Pjoqqp
+    I used this fantstic tool to change the colors of the .png images with css filters.
+    It approximates the desired color and seems to work very well.
+*/
 :root {
     /* color palette */
+    --blue:             invert(24%) sepia(13%) saturate(1455%) hue-rotate(169deg) brightness(99%) contrast(88%); /*#34495E*/
+    --black:            invert(15%) sepia(10%) saturate(244%) hue-rotate(314deg) brightness(101%) contrast(85%); /*#373434*/
+
     --mainColor:        #c4c1c1;
     --secondMainColor:  #b1aeae;
-    --letteringColor:   #373434;
-    --detailsColor:     #34495E;
     --footerColor:      #918d8d;
+    --detailsColor:     #34495E;
+    --letteringColor:   #373434;
+
+    --switchModeImage:  var(--blue);
+    --switchModeImage2: var(--black);
+    --linkedinImage:    var(--black);
+    --githubImage:      var(--black);
+    --social-images:    invert(1);
+    --mobile-menu:      var(--blue);
+}
+
+html[data-theme="vaporwave"] {
+    /* vaporwave color palette */
+    --yellow:           invert(93%) sepia(98%) saturate(353%) hue-rotate(347deg) brightness(100%) contrast(102%);  /*#fffb96*/
+    --cian:             invert(77%) sepia(71%) saturate(2884%) hue-rotate(119deg) brightness(104%) contrast(102%); /*#00f8d7*/
+    --white:            invert(84%) sepia(1%) saturate(3150%) hue-rotate(202deg) brightness(108%) contrast(117%);  /*#f8f8ff*/
+
+    --mainColor:        #ca17c1;
+    --secondMainColor:  #23a3a3;
+    --footerColor:      #390e58;
+    --detailsColor:     #00f8d7;
+    --detailsColor2:    #fffb96;
+    --letteringColor:   #f8f8ff;
+
+    --switchModeImage:  var(--yellow);
+    --switchModeImage2: var(--cian);
+    --linkedinImage:    var(--white);
+    --githubImage:      var(--white);
+    --social-images:    invert(0);
+    --mobile-menu:      var(--yellow);
 }
 
 ::-webkit-scrollbar {
@@ -87,9 +123,8 @@ section {
 
 .innercursor {
     display: none;
-    width: .3rem;
-    height: .3rem;
-    border: 2px solid var(--detailsColor);
+    width: .5rem;
+    height: .5rem;
     background: var(--detailsColor);
     border-radius: 50%;
     position: absolute;
@@ -109,11 +144,21 @@ section {
     display: block;
     width: 1rem;
     height: 1rem;
-    background: var(--letteringColor);
-    border: 2px solid var(--letteringColor);
+    background: var(--detailsColor);
     opacity: 0.7;
     transition-property: background, transform;
     z-index: 7;
+}
+
+.vapor-cursor {
+    mix-blend-mode: initial;
+    background: var(--detailsColor);
+    opacity: 0.5;
+}
+
+.vapor-innercursor {
+    display: block;
+    background: var(--detailsColor2);
 }
 
 /*** header with menu ***/
@@ -259,13 +304,36 @@ header.sticky ul li a:hover {
     max-width: 24px;
 }
 
+.socialaccount li:nth-child(1) a img {
+    filter: var(--linkedinImage);
+}
+
+.socialaccount li:nth-child(2) a img {
+    filter: var(--githubImage);
+}
+
 .socialaccount li a img:hover {
-    filter: invert(1);
+    filter: var(--social-images);
+}
+
+/*** switch theme button ***/
+.vaporwave-mode button {
+    border: none;
+    background-color: inherit;
+}
+
+.vaporwave-mode img {
+    max-width: 30px;
+    filter: var(--switchModeImage);
+}
+
+.vaporwave-mode img:hover {
+    filter: var(--switchModeImage2)
 }
 
 /*** prompt effect ***/
 .blink {
-    animation: blinker 1s step-start infinite
+    animation: blinker 1s step-start infinite;
 }
   
 @keyframes blinker {
@@ -294,10 +362,3 @@ section#contacts {
 section#siteinfo {
     background: var(--mainColor);
 }
-
-/*.work .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-}*/

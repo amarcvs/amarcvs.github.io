@@ -3,7 +3,7 @@ $(document).ready(function() {
     
     let mouseCursor = document.querySelector(".cursor");
     let mouseInnerCursor = document.querySelector(".innercursor");
-    let navLinks = document.querySelectorAll('a');
+    let navLinks = document.querySelectorAll('a, button');
 
     window.addEventListener('mousemove', cursor);
 
@@ -28,9 +28,13 @@ $(document).ready(function() {
 
     $(document).mouseleave(function () {
         mouseCursor.style.display = 'none';
+        if(localStorage.getItem('vaporMode') === 'enabled')
+            mouseInnerCursor.classList.remove('vapor-innercursor');
     });
 
     $(document).mouseenter(function () {
         mouseCursor.style.display = 'block';
+        if(localStorage.getItem('vaporMode') === 'enabled')
+            mouseInnerCursor.classList.add('vapor-innercursor');
     });
 });
