@@ -17,4 +17,6 @@ function toggleMode() {
     mouseCursor.classList.toggle('vapor-cursor');
     mouseInnerCursor.classList.toggle('vapor-innercursor');
     localStorage.setItem("vaporMode", isVapor ? "disabled" : "enabled");
+
+    window.scrollTo(0, 0);
 }

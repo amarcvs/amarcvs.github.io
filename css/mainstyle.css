@@ -36,9 +36,8 @@ body {
 
     --switchModeImage:  var(--blue);
     --switchModeImage2: var(--black);
-    --linkedinImage:    var(--black);
-    --githubImage:      var(--black);
-    --social-images:    invert(1);
+    --socialImage:      var(--black);
+    --socialImage2:     var(--blue);
     --mobile-menu:      var(--blue);
 }
 
@@ -48,18 +47,17 @@ html[data-theme="vaporwave"] {
     --cian:             invert(77%) sepia(71%) saturate(2884%) hue-rotate(119deg) brightness(104%) contrast(102%); /*#00f8d7*/
     --white:            invert(84%) sepia(1%) saturate(3150%) hue-rotate(202deg) brightness(108%) contrast(117%);  /*#f8f8ff*/
 
-    --mainColor:        #ca17c1;
-    --secondMainColor:  #23a3a3;
+    --mainColor:        #23a3a3;
+    --secondMainColor:  #ca17c1;
     --footerColor:      #390e58;
     --detailsColor:     #00f8d7;
     --detailsColor2:    #fffb96;
     --letteringColor:   #f8f8ff;
 
-    --switchModeImage:  var(--yellow);
-    --switchModeImage2: var(--cian);
-    --linkedinImage:    var(--white);
-    --githubImage:      var(--white);
-    --social-images:    invert(0);
+    --switchModeImage:  var(--cian);
+    --switchModeImage2: var(--yellow);
+    --socialImage:      var(--white);
+    --socialImage2:     var(--cian);
     --mobile-menu:      var(--yellow);
 }
 
@@ -152,7 +150,7 @@ section {
 
 .vapor-cursor {
     mix-blend-mode: initial;
-    background: var(--detailsColor);
+    background: var(--detailsColor2);
     opacity: 0.5;
 }
 
@@ -180,7 +178,7 @@ header.sticky {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-header .selected-item {
+header .current-page {
     color: var(--letteringColor);
     font-size: 24px;
     font-weight: 700;
@@ -188,7 +186,7 @@ header .selected-item {
     text-decoration: none;
 }
 
-header .selected-item:hover {
+header .current-page:hover {
     color: var(--detailsColor);
     border-color: var(--detailsColor);
 }
@@ -278,42 +276,39 @@ header.sticky ul li a:hover {
     color: var(--letteringColor);
 }
 
-/*** social icons ***/
-.socialaccount {
-    margin-left: 45px;
+/*** footer icons ***/
+.footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.socialaccount li {
+.footer-icon li {
     list-style: none;
 }
 
-.socialaccount li a {
+.footer-icon li a,
+.footer-icon li button {
     display: grid;
     place-items: center;
     width: 40px;
     height: 40px;
-    border: 2px solid var(--letteringColor);
-    margin: 0 0 10px;
 }
 
-.socialaccount li a:hover {
-    background: var(--detailsColor);
-}
-
-.socialaccount li a img {
+.footer-icon li a img {
     max-width: 24px;
 }
 
-.socialaccount li:nth-child(1) a img {
-    filter: var(--linkedinImage);
+.footer-icon li:nth-child(1) a img {
+    filter: var(--socialImage);
 }
 
-.socialaccount li:nth-child(2) a img {
-    filter: var(--githubImage);
+.footer-icon li:nth-child(2) a img {
+    filter: var(--socialImage);
 }
 
-.socialaccount li a img:hover {
-    filter: var(--social-images);
+.footer-icon li a img:hover {
+    filter: var(--socialImage2);
 }
 
 /*** switch theme button ***/
@@ -323,7 +318,7 @@ header.sticky ul li a:hover {
 }
 
 .vaporwave-mode img {
-    max-width: 30px;
+    max-width: 24px;
     filter: var(--switchModeImage);
 }
 

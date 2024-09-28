@@ -3,26 +3,10 @@
 @media only screen and (min-width: 1201px) { /**/ }
 
 /* large devices (laptops/desktops/tablets, from 992px to 1200px) */
-@media only screen and (max-width: 1200px) {
-    * {
-        cursor: initial;
-        pointer-events: initial;
-    }
-
-    a, a img, .toggle  {
-        cursor: pointer;
-    }
-
-    .cursor,
-    .innercursor {
-        visibility: hidden;
-        display: none;
-    }
-}
+@media only screen and (max-width: 1200px) { /**/ }
 
 /* medium devices (landscape tablets, from 768px to 991px) */
 @media only screen and (max-width: 991px) {
-
     .menu {
         display: block;
         position: fixed;
@@ -51,11 +35,7 @@
         margin: 10px;
     }
 
-    .vaporwave-mode img {
-        max-width: 70px;
-    }
-
-    header ul li a.selected-item {
+    header ul li a.current-page {
         font-size: 50px;
         margin: 10px;
     }
@@ -87,7 +67,7 @@
 
     header,
     header.sticky {
-        background: var(--secondMainColor);
+        background: var(--mainColor);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         padding: 30px 0px 30px 60px;
     }
@@ -111,12 +91,8 @@
         filter: var(--switchModeImage);
     }
 
-    .socialaccount li a:hover {
-        background: initial;
-    }
-
-    .socialaccount li a img:hover {
-        filter: initial;
+    .footer-icon li a img:hover {
+        filter: var(--socialImage);
     }
 }
 
@@ -188,17 +164,9 @@
         flex-direction: column;
     }
 
-    .socialaccount {
-        display: flex;
-        padding-top: 50px;
-        margin-left: 0px;
-    }
-
-    .socialaccount li a {
-        width: 40px;
-        height: 40px;
-        margin: initial;
-        margin-right: 10px;
+    .footer-icon li a,
+    .footer-icon li button {
+        margin: 0 5px;
     }
 
     .check-list {
