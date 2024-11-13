@@ -1,7 +1,16 @@
 // cursor animation
 $(document).ready(function() {
-    let mouseCursor = document.querySelector(".cursor");
-    let mouseInnerCursor = document.querySelector(".innercursor");
+    let mouseCursor = document.createElement("div");
+    let mouseInnerCursor = document.createElement("div");
+    document.body.appendChild(mouseCursor);
+    document.body.appendChild(mouseInnerCursor);
+
+    mouseCursor.classList.add("cursor");
+    mouseInnerCursor.classList.add("innercursor");
+
+    document.querySelectorAll('body, a, button').forEach(element => { // usefull if a device has JS disabled
+        element.style.cursor = 'none';
+    });
 
     if (!isTouchEnabled()) {
         let navLinks = document.querySelectorAll('a, button, div.toggle');
@@ -44,6 +53,33 @@ $(document).ready(function() {
         mouseInnerCursor.classList.remove('innercursor');
     }
 });
+
+// switch to vaporwave theme
+$(document).ready(function() {
+    let mouseCursor = document.querySelector(".cursor");
+    let mouseInnerCursor = document.querySelector(".innercursor");
+
+    if(localStorage.getItem('vaporMode') === 'enabled') {
+        $("html").attr("data-theme", "vaporwave");
+        mouseCursor.classList.add('vapor-cursor');
+        mouseInnerCursor.classList.add('vapor-innercursor');
+    }
+});
+
+function toggleMode() {
+    if (!isTouchEnabled()) {
+        let mouseCursor = document.querySelector(".cursor");
+        let mouseInnerCursor = document.querySelector(".innercursor");
+        mouseCursor.classList.toggle('vapor-cursor');
+        mouseInnerCursor.classList.toggle('vapor-innercursor');
+    }
+
+    let isVapor = $("html").attr("data-theme") === "vaporwave";
+    $("html").attr("data-theme", isVapor ? "default" : "vaporwave");
+    localStorage.setItem("vaporMode", isVapor ? "disabled" : "enabled");
+
+    window.scrollTo(0, 0);
+}
 
 function isTouchEnabled() {
     return ('ontouchstart' in window ) ||

@@ -18,12 +18,17 @@
         height: 100vh;
         background: var(--mainColor);
         transition: 1s;
-        z-index: 1;
         border-top: 5px solid rgba(0, 0, 0, 0.2);
     }
 
     .menu.active {
         top: 0%;
+    }
+
+    header {
+        width: 100%;
+        margin: 0 0;
+        z-index: 4;
     }
 
     header ul li {

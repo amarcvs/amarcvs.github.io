@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Alberti | About</title>
 
-    <link rel="icon" href="../src/program-favicon.png">
-    <link rel="stylesheet" href="../css/mainstyle.css">
-    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="icon" href="/src/program-favicon.png">
+    <link rel="stylesheet" href="/css/mainstyle.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <script type="text/javascript" src="/javascript/fadeinfadeout.js"></script>
     <header>
         <div class="toggle" onclick="toggleMenu();"></div>
         <div class="menu-div">
             <ul class="menu">
-                <li><a href="/" onclick="toggleMenu();">Home</a></li>
-                <li><a href="/about/" class="current-page" onclick="toggleMenu();">About</a></li>
-                <li><a href="/work/" onclick="toggleMenu();">Work</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/" class="current-page keyword">About</a></li>
+                <li><a href="/posts/">Posts</a></li>
+                <li><a href="/work/">Work</a></li>
             </ul>
         </div>
     </header>
@@ -29,14 +32,11 @@
         </div>
         <div class="content">
             <p>
-                <!--Hi reader, welcome to my digital corner.<br/>-->
-                I'm <strong>Marco</strong> and I recently graduated with a <strong>Bachelor's degree</strong> in <strong>Computer Engineering</strong> at <strong>"La Sapienza"</strong> University of Rome. Currently, I'm pursuing a <strong>Master's degree</strong> in <strong>Engineering in Computer Science</strong> at the same University, with a focus on <strong>Cybersecurity</strong> concepts, which has become a passion of mine.<br/><br/>
-                
-                During my studies, I had the opportunity to work for a period as an <strong>IT Consultant</strong> in a Digital Transformation Company on a large-scale project in Italy.<br/><br/>
+                I'm <span class="keyword">Marco</span> and I recently graduated with a <span class="keyword">Bachelor's degree</span> in <span class="keyword">Computer Engineering</span> at <span class="keyword">"La Sapienza"</span> University of Rome. Currently, I'm pursuing a <span class="keyword">Master's degree</span> in <span class="keyword">Engineering in Computer Science</span> at the same University, with a focus on <span class="keyword">Cybersecurity</span>, a field I am deeply passionate about.<br/><br/>
 
-                In general, I strive to create <strong>reliable and robust solutions</strong> that ensure, first and foremost, security against malicious attacks, by putting myself in the shoes of the bad guys who act behind the scenes. In addition to Cybersecurity, I have a keen interest in the field of <strong>microcontrollers</strong>.<br/><br/>
-                
-                Outside of study, I like playing <strong>CTF challenges</strong> and gradually explore the world of <strong>Open Source</strong> software.
+                During my academic journey, I had the opportunity to work as an <span class="keyword">IT Consultant</span> for a Digital Transformation company, where I contributed to a large-scale project in Italy. Through this experience, I developed hands-on expertise in consulting and handling complex projects.<br/><br/>
+
+                Outside of my studies, I enjoy participating in <span class="keyword">Capture the Flag (CTF)</span> challenges and exploring the world of <span class="keyword">Open Source</span> software, where I find great fulfillment in both learning and contributing to the community.
             </p>
         </div>
     </section>
@@ -47,9 +47,9 @@
         </div>
         <div class="content">
             <p>
-                I have spent the last few years studying in different areas of computer science using different technologies and I was especially attracted to those for the <strong>back-end</strong> of a computer system. I particularly love the <strong>C</strong> programming language and <strong>Linux</strong>.<br/><br/>
-                
-                You can find some of the projects I have created, or contribute to, in the <a href="/work/">work</a> section of this website and more on my <a href="https://github.com/amarcvs" target="_blank">GitHub</a> page.
+                Over the past few years, I have explored various areas of computer science, working with a wide range of technologies. I've developed a particular interest in <span class="keyword">back-end</span> systems, <span class="keyword">C</span> programming language and <span class="keyword">Linux</span>.<br/><br/>
+
+                You can find some of the projects I've created, or contributed to, in the <a href="/work/">work</a> section of this website, as well as additional projects on my <a href="https://github.com/amarcvs" target="_blank">GitHub</a> page. Furthermore, you can read my blog posts in the <a href="/posts/">posts</a> section.
             </p>
         </div>
     </section>
@@ -59,31 +59,22 @@
             <h2>Other info</h2>
         </div>
         <div class="content">
-            <div class="content-spacing">
-                <p>
-                    This website was designed and developed <!--with love and coffee -->by me, with the purpose of creating my personal <strong>Portfolio</strong> and more.
-                </p>
-            </div>
+            <p>
+                This website was designed and developed <!--with love and coffee -->by me, originally with the aim of creating my personal <span class="keyword">Portfolio</span>, but over time, it has evolved into something more.
+            </p>
         </div>
-        <p><a href="/">← Home</a></p>
     </section>
-
-    <div class="cursor"></div>
-    <div class="innercursor"></div>
 
     <div class="copyright">
         <ul class="footer-icon">
-            <li><a href="https://www.linkedin.com/in/marco-alberti-dev/" title="LinkedIn" target="_blank"><img src="../src/linkedin.png"></a></li>
-            <li><a href="https://github.com/amarcvs" title="GitHub" target="_blank"><img src="../src/github.png"></a></li>
-            <li class="vaporwave-mode"><button onclick="toggleMode();"><img src="../src/vaporwave-mode.png" title="Vaporwave mode"></button></li>
+            <li><a href="https://www.linkedin.com/in/marco-alberti-dev/" title="LinkedIn" target="_blank"><img src="/src/linkedin.png"></a></li>
+            <li><a href="https://github.com/amarcvs" title="GitHub" target="_blank"><img src="/src/github.png"></a></li>
+            <li class="vaporwave-mode"><button onclick="toggleMode();"><img src="/src/vaporwave-mode.png" title="Switch-theme button"></button></li>
         </ul>
         <p>&copy; 2024 <a href="https://www.marcoalberti.dev">Marco Alberti</a>. All rights reserved. Icons by <a href="https://icons8.it/" target="_blank">icons8</a>.</p>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../javascript/fadeinfadeout.js"></script>
-    <script type="text/javascript" src="../javascript/menu.js"></script>
-    <script type="text/javascript" src="../javascript/switchtheme.js"></script>
-    <script type="text/javascript" src="../javascript/cursor.js"></script>
+    <script type="text/javascript" src="/javascript/menu.js"></script>
+    <script type="text/javascript" src="/javascript/cursor-and-themes.js"></script>
 </body>
 </html>
